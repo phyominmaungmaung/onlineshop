@@ -1,0 +1,76 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::get('/',[
+    'uses'=>'HomeController@getWelcome',
+    'as'=>'/'
+]);
+Route::get('/login',[
+    'uses'=>'AuthController@getLogin',
+    'as'=>'login'
+]);
+Route::post('/login',[
+    'uses'=>'AuthController@postLogin',
+    'as'=>'login'
+]);
+Route::get('/dashboard',[
+    'uses'=>'AdminController@getDashboard',
+    'as'=>'dashboard'
+]);
+Route::get('/new-cat',[
+    'uses'=>'PostController@getCategory',
+    'as'=>'new.cat'
+]);
+Route::post('/new-cat',[
+    'uses'=>'PostController@postNewCategory',
+    'as'=>'new.cat'
+]);
+Route::get('/cat-del/{id}',[
+    'uses'=>'PostController@getDelCat',
+    'as'=>'cat.del'
+]);
+Route::get('/new-post',[
+    'uses'=>'PostController@getNewPost',
+    'as'=>'new.post'
+]);
+Route::post('/new-post',[
+    'uses'=>'PostController@postNewPost',
+    'as'=>'new.post'
+]);
+Route::get('/post',[
+   'uses'=>'PostController@getPost',
+   'as'=>'post'
+]);
+Route::post('/post-update/{id}',[
+    'uses'=>'PostController@postUpdate',
+    'as'=>'post.update'
+]);
+Route::get('/post-del/{id}',[
+    'uses'=>'PostController@getDelPost',
+    'as'=>'post.del'
+]);
+Route::get('/shop',[
+   'uses'=>'HomeController@getShop',
+   'as'=>'shop'
+]);
+Route::get('/frontcat',[
+   'uses'=>'HomeController@getFrontcat',
+   'as'=>'frontcat'
+]);
+Route::get('/cart',[
+   'uses'=>'HomeController@getCart',
+   'as'=>'cart'
+]);
+Route::get('/checkout',[
+   'uses'=>'HomeController@getCheckout',
+   'as'=>'checkout'
+]);
